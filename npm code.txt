@@ -1,0 +1,2 @@
+npm config set strict-ssl false --> to install packagaes in college wifi 
+npm config set strict-ssl ture  
