@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
-import Farmer from "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/components/Auth/farmer.js";
-import Machine from "../../components/Auth/Machine.js";
-import Buyer from "../../components/Auth/Buyer.js";
+import Farmer from "../farmer/Home";
+import Machine from "../transport/Home";
+import Buyer from "../buyer/Home";
 
 export default function Main() {
   const [role, setRole] = useState("");

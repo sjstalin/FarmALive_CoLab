@@ -1,11 +1,11 @@
 import React from "react";
-import "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/App.css";
+import "../../App.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 //import "./pages/loginpage.css";
-import Home from "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/pages/transport/Home.js";
+import Home from "../../pages/transport/Home";
 // import Register from "./pages/register";
-import Profile from "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/pages/transport/Profile.js";
+import Profile from "../../pages/transport/Profile";
 // import Seller from "./pages/seller";
 // import Market from "./pages/market";
 // import Login from "./pages/Login";

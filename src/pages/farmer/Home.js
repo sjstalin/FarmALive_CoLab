@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/components/Navbar.jsx";
+import Navbar from "../../components/Navbar";
 import Axios from "axios";
-import "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/App.css";
+import "../../App.css";
 import { useState } from "react";
 import { Stocks } from "./Stock";
 import Crops from "./crops";

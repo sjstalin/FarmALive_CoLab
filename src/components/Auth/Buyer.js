@@ -1,8 +1,8 @@
 import React from "react";
-import "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/App.css";
+import "../../App.css";
 
-import Home from "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/pages/buyer/Home.js";
-import Profile from "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/pages/farmer/Profile.js";
+import Home from "../../pages/buyer/Home";
+import Profile from "../../pages/buyer/Profile";
 
 import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 

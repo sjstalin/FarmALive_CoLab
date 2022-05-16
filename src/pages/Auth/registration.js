@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
-import "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/App.css";
+import "../../App.css";
 import { useNavigate } from "react-router-dom";
 
 function Registration() {

@@ -1,6 +1,6 @@
 import React from "react";
 import Axios from "axios";
-import "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/App.css";
+import "../../App.css";
 import { useState } from "react";
 import Navbar from "../Components/Navbar";
 

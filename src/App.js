@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Main from "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/pages/Auth/main.js";
-import Registration from "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/pages/Auth/registration.js";
+import Main from "../src/pages/Auth/main";
+import Registration from "../src/pages/Auth/registration";
 
 function App() {
   return (
