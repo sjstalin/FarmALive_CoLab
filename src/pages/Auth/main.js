@@ -19,9 +19,9 @@ export default function Main() {
 
   return (
     <div>
-      {role == "farmer" && <Farmer />}
-      {role == "machine" && <Machine />}
-      {role == "buyer" && <Buyer />}
+      {role === "farmer" && <Farmer />}
+      {role === "machine" && <Machine />}
+      {role === "buyer" && <Buyer />}
     </div>
   );
 }

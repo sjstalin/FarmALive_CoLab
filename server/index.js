@@ -39,7 +39,7 @@ const db = mysql.createConnection({
   host: "127.0.0.1",
   port: "3306",
   password: "password",
-  database: "employeeSystem",
+  database: "farmaliveDB",
 });
 
 app.post("/register", (req, res) => {
@@ -138,7 +138,7 @@ app.post("/create", (req, res) => {
 
 app.get("/farmer_details", (req, res) => {
   db.query(
-    "SELECT * FROM employeeSystem.farmer_details ORDER BY ID DESC LIMIT 1",
+    "SELECT * FROM farmaliveDB.farmer_details ORDER BY FID DESC LIMIT 1",
     (err, result) => {
       if (err) {
         console.log(err);
@@ -151,13 +151,13 @@ app.get("/farmer_details", (req, res) => {
 
 app.post("/createcrops", (req, res) => {
   const crop_name = req.body.crop_name;
-  const land_size = req.body.land_size;
+  const quantity = req.body.quantity;
   const irrigation = req.body.irrigation;
-  const month_plow = req.body.month_plow;
+  const month_harvest = req.body.month_harvest;
 
   db.query(
-    "INSERT INTO Cropsdata (crop_name,land_size,irrigation, month_plow) VALUES (?,?,?,?)",
-    [crop_name, land_size, irrigation, month_plow],
+    "INSERT INTO Cropsdata (crop_name,quantity,irrigation,month_harvest) VALUES (?,?,?,?)",
+    [crop_name, quantity, irrigation, month_harvest],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -171,7 +171,7 @@ app.post("/createcrops", (req, res) => {
 
 app.get("/Cropsdata", (req, res) => {
   db.query(
-    "SELECT * FROM employeeSystem.Cropsdata ORDER BY ID DESC LIMIT 4",
+    "SELECT * FROM farmaliveDB.Cropsdata ORDER BY ID DESC LIMIT 4",
     (err, result) => {
       if (err) {
         console.log(err);

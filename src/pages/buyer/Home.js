@@ -5,6 +5,8 @@ import "../../App.css";
 import { useState } from "react";
 import { Det } from "./Det";
 import Details from "./details";
+import Footer from "../../components/Footer/Footer";
+
 // import Table from "react-bootstrap/Table";
 
 import {
@@ -57,6 +59,7 @@ function Home() {
           borderRight: "10px solid grey",
         }}
       ></Card.Body>
+      <Footer />
     </div>
   );
 }

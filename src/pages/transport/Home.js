@@ -6,6 +6,10 @@ import { useState } from "react";
 import { Trans } from "./Trans";
 import { Logs } from "./Logs";
 import Vehicle from "./vehicle";
+import Background from "./transportComponents/background";
+
+import Footer from "../../components/Footer/Footer";
+
 // import Table from "react-bootstrap/Table";
 
 import {
@@ -21,15 +25,7 @@ function Home() {
   return (
     <div>
       <Navbar />
-
-      <header className="App-header">
-        <div className="Reg">
-          <center>
-            <p className="card-category">Welcome to Home Page</p>
-          </center>
-        </div>
-      </header>
-
+      <Background />
       <Vehicle />
 
       <br></br>
@@ -72,6 +68,7 @@ function Home() {
           borderRight: "10px solid grey",
         }}
       ></Card.Body>
+      <Footer />
     </div>
   );
 }

@@ -24,30 +24,30 @@
   align-items: center;
   justify-content: center;
   font-size: calc(5px + 2vmin);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 
 p {
   font-weight: 700;
   text-align: center;
   font-size: 40px;
-  font-family: Hack, sans-serif;
+  font-family:"Nunito";
   text-transform: uppercase;
-  background: linear-gradient(90deg, #000, #fff, #000);
+  background: linear-gradient(90deg, #fff, #fff, #fff);
   letter-spacing: 5px;
   -webkit-background-clip: text;
   background-clip: text;
@@ -58,14 +58,14 @@ p {
   position: relative;
 }
 
-@keyframes shine {
+/* @keyframes shine {
   0% {
     background-position-x: -500%;
   }
   100% {
     background-position-x: 500%;
   }
-}
+} */
 
 /*  Checkout my other pens on  https://codepen.io/grohit/  */
 

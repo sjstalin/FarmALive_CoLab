@@ -1,8 +1,8 @@
 import React from "react";
 import Axios from "axios";
-import "../App.css/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/App.css";
+import "../App.css";
 import { useState } from "react";
-import Navbar from "/Users/joshuasatlin/Documents/GitHub/untitled folder/farmalive/src/components/Navbar.jsx";
+import Navbar from "../components/Navbar";
 
 function Register() {
   const [first_name, setfirst_name] = useState("");

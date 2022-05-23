@@ -5,13 +5,34 @@ import styled from "styled-components";
 import { mobile } from "react-responsive";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
+import { makeStyles } from "@material-ui/core/styles";
+
 //import Categories from "./Categories";
+
+const useStyles = makeStyles((theme) => ({
+
+  appbarTitle: {
+    flexGrow: "1",
+    fontFamily: "Nunito",
+    color: "#fff",
+  },
+
+  colorText: {
+    color: "#5AFF3D",
+  },
+
+}));
+
 
 const Container = styled.div`
   height: 60px;
   padding:10px;
   border:10px;
   colour:black;
+  justify-content: space-around;
+  height: 10vh;
+  background: rgb(0, 33, 65);
+  margin: 0;
 `;
 
 const Wrapper = styled.div`
@@ -36,68 +57,72 @@ const Center = styled.div`
 `;
 
 const Links = styled.h3`
-  font-size: 20px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 1rem;
+  font-Family: "Nunito";
+
 `;
 
 const Logo = styled.h1`
   font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
 `;
+ 
 
-const Right = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-`;
 
 const MenuItem = styled.div`
-  font-size: 20px;
+  font-size: 10px;
   cursor: pointer;
   margin-left: 25px;
+  text-decoration: none;
+  font-size: 1.6rem;
 `;
+
+
+// ************************************************************
+
+
+// ************************************************************
+
 
 
 const Navbar = () => {
+  const classes = useStyles();
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Logo>Farm Alive</Logo>
+        <h1 className={classes.appbarTitle}>
+            Farm<span className={classes.colorText}>Alive.</span>
+          </h1>
         </Left>
         <Center>
-          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-            <Links>Home</Links>
+          <Link to="/Home" style={{ textDecoration: "none", color: "black" }}>
+            <Links className="holder">Home</Links>
           </Link>
           <Link to="/Profile" style={{ textDecoration: "none", color: "black" }}>
           <Links>Profile</Links>
           </Link>
-          {/* <Link to="../market" style={{ textDecoration: "none", color: "black" }}>
-          <Links>Market</Links>
+           <Link to="../market" style={{ textDecoration: "none", color: "black" }}>
+          <Links>About</Links>
           </Link>
           <Link to="../seller" style={{ textDecoration: "none", color: "black" }}>
-          <Links>Seller</Links>
+          <Links>Help</Links>
           </Link>
-          <Link to="../machinHM" style={{ textDecoration: "none", color: "black" }}>
-          <Links>TransportHM</Links>
+          <Link to="/register" style={{ textDecoration: "none", color: "black" }}>
+          <Links>Register</Links>
           </Link>
-          <Link to="../Login" style={{ textDecoration: "none", color: "black" }}>Login</Link> */}
+          
+
+          <Link to="/Logout" style={{ textDecoration: "none", color: "black" }}>
+          <Links>Logout</Links>
+          </Link>
+
         </Center>
-        <Right>
 
-
-
-          <MenuItem >
-          <ul>
-                  <Button><Link to="/Login" style={{ textDecoration: "none", color: "black" }}>LogOut</Link></Button>
-                </ul>
-          </MenuItem>
-          <MenuItem>  
-               <ul>
-                  <Button><Link to="../register" style={{ textDecoration: "none", color: "black" }}>Register </Link></Button>
-                </ul>
-                </MenuItem>
- 
-        </Right>
       </Wrapper>
     </Container>
   );

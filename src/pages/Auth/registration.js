@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import "../../App.css";
 import { useNavigate } from "react-router-dom";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer/Footer";
 
 function Registration() {
   const [usernameReg, setUsernameReg] = useState("");
@@ -34,11 +36,11 @@ function Registration() {
     }).then((response) => {
       if (response.data.message) {
         setLoginStatus(response.data.message);
-        console.log(response.data);
-        // navigate("/");
+        // console.log(response.data);
+        navigate("/");
       } else {
         setLoginStatus(response.data[0].username);
-        console.log(setLoginStatus);
+        // console.log(setLoginStatus);
         // navigate("/");
       }
     });
@@ -56,16 +58,18 @@ function Registration() {
 
   return (
     <div className="App">
-      <div class="topnav">
+      {/* <div class="topnav">
         <a class="active" href="#home">
           Home
         </a>
         <a href="#news">Home</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
-      </div>
+      </div> */}
+      <Header />
+
       <div className="information">
-        <h1>Registration</h1>
+        <h1>Register</h1>
         <label>Username</label>
         <input
           type="text"
@@ -87,11 +91,13 @@ function Registration() {
             setRoleReg(e.target.value);
           }}
         />
+        <br></br>
         <button onClick={register}> Register </button>
       </div>
-
+      <br></br>
       <div className="information">
         <h1>Login</h1>
+        <label>Username</label>
         <input
           type="text"
           placeholder="Username..."
@@ -99,6 +105,7 @@ function Registration() {
             setUsername(e.target.value);
           }}
         />
+        <label>Password</label>
         <input
           type="password"
           placeholder="Password..."
@@ -106,31 +113,16 @@ function Registration() {
             setPassword(e.target.value);
           }}
         />
+        <br></br>
         <button onClick={login}> Login </button>
-        {/* onPress={() => navigation.navigate('Details')} */}
+        <h1>
+          <br></br>
+          <center> Welcome {loginStatus}</center>
+        </h1>
       </div>
-
-      <h1> Welcome {loginStatus}</h1>
+      <Footer />
     </div>
   );
 }
 
 export default Registration;
-
-{
-  /* <>
-  <Form.Group className="mb-3">
-    <Form.Label>Disabled input</Form.Label>
-    <Form.Control placeholder="Disabled input" disabled />
-  </Form.Group>
-  <Form.Group className="mb-3">
-    <Form.Label>Disabled select menu</Form.Label>
-    <Form.Select disabled>
-      <option>Disabled select</option>
-    </Form.Select>
-  </Form.Group>
-  <Form.Group className="mb-3">
-    <Form.Check type="checkbox" label="Can't check this" disabled />
-  </Form.Group>
-</> */
-}

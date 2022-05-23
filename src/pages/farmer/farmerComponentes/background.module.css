@@ -1,0 +1,50 @@
+.mainbg {
+    height: 10%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    place-items: center;
+    /* padding: 5px; */
+  }
+  
+  /* .header {
+    height: 400px;
+    font-size: 60px;
+    font-Family: "Nunito";
+    text-align: justify;
+    color:black;
+    text-align: center;
+    text-shadow: 10in;
+    text-decoration-color: azure;
+  } */
+  
+.video {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+  }
+  
+.content {
+    position: absolute;
+    font-family: "Nunito";
+  
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+  }
+  
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.2);
+    /* background-color: #000000cc; */
+  }

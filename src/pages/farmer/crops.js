@@ -9,33 +9,34 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Button, Card, Form, Row, Col } from "react-bootstrap";
+import { Button, Card, Form, Row, Col, Dropdown } from "react-bootstrap";
 import { Container } from "@mui/material";
+// import CDropdown from "@popperjs/core";
 
 // export const Crops = () => {
 const Crops = () => {
   //   return function Crops() {
   const [crop_name, setcrop_name] = useState("");
-  const [land_size, setland_size] = useState(0);
+  const [quantity, setquantity] = useState(0);
   const [irrigation, setirrigation] = useState("");
-  const [month_plow, setmonth_plow] = useState("");
+  const [month_harvest, setmonth_harvest] = useState("");
 
   const [CropList, setCropList] = useState([]);
 
   const addCrop = () => {
     Axios.post("http://localhost:3001/createcrops", {
       crop_name: crop_name,
-      land_size: land_size,
+      quantity: quantity,
       irrigation: irrigation,
-      month_plow: month_plow,
+      month_harvest: month_harvest,
     }).then(() => {
       setCropList([
         ...CropList,
         {
           crop_name: crop_name,
-          land_size: land_size,
+          quantity: quantity,
           irrigation: irrigation,
-          month_plow: month_plow,
+          month_harvest: month_harvest,
         },
       ]);
     });
@@ -56,7 +57,7 @@ const Crops = () => {
         <Card.Header>
           <Card.Title
             as="h4"
-            style={{ display: "flex", justifyContent: "center" }}
+            style={{ display: "flex", justifyContent: "left", padding: "20px" }}
           >
             CURRENT CROPS IN FARM
           </Card.Title>
@@ -68,9 +69,9 @@ const Crops = () => {
                 {/* <TableCell>Key</TableCell> */}
                 <TableCell align="center">ID</TableCell>
                 <TableCell align="center">Name</TableCell>
-                <TableCell align="center">size_of_land</TableCell>
+                <TableCell align="center">quantity</TableCell>
                 <TableCell align="center">Irrigation type</TableCell>
-                <TableCell align="center">Month Plowed</TableCell>
+                <TableCell align="center">Month Harvest</TableCell>
               </TableRow>
             </TableHead>
 
@@ -85,9 +86,9 @@ const Crops = () => {
             </TableCell> */}
                   <TableCell align="center">{res.id}</TableCell>
                   <TableCell align="center">{res.crop_name}</TableCell>
-                  <TableCell align="center">{res.land_size}</TableCell>
+                  <TableCell align="center">{res.quantity}</TableCell>
                   <TableCell align="center">{res.irrigation}</TableCell>
-                  <TableCell align="center">{res.month_plow}</TableCell>
+                  <TableCell align="center">{res.month_harvest}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -132,11 +133,11 @@ const Crops = () => {
                 }}
               />
 
-              <label>Land Size:</label>
+              <label>quantity:</label>
               <input
                 type="int"
                 onChange={(event) => {
-                  setland_size(event.target.value);
+                  setquantity(event.target.value);
                 }}
               />
 
@@ -148,13 +149,26 @@ const Crops = () => {
                 }}
               />
 
-              <label>Month Plowed</label>
+              <label>Month Harvest</label>
               <input
                 type="text"
                 onChange={(event) => {
-                  setmonth_plow(event.target.value);
+                  setmonth_harvest(event.target.value);
                 }}
               />
+              {/* <Dropdown>
+                <Dropdown.Toggle color="secondary">Irrigation</Dropdown.Toggle>
+
+                <Dropdown.Menu
+                  onChange={(event) => {
+                    setirrigation(event.target.value);
+                  }}
+                >
+                  <Dropdown.Item value="Drip">Drip</Dropdown.Item>
+                  <Dropdown.Item value="Sprinkler">Sprinkler</Dropdown.Item>
+                  <Dropdown.Item value="Surface">Surface</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown> */}
             </div>
             <div className="regbutton">
               <center>
